@@ -10,5 +10,3 @@
         {% endif %}
     </li>
 {% endfor %}
-<li><a href="{% url 'contacts' %}" {% if request.path == '/contacts/' %}class="active"{% endif %}>Contacts</a></li>
-<li><a href="{% url 'about' %}" {% if request.path == '/about/' %}class="active"{% endif %}>About</a></li>
