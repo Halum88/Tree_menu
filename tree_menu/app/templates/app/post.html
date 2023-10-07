@@ -1,0 +1,21 @@
+{% extends "app/base.html" %}
+{% block title %} Post {{title}}{% endblock %}
+
+{% block content %}
+<main>
+    <section>
+	<div class="container">
+	    <h1>{{title}}</h1>
+	</div>
+    </section>
+	<div>
+		{% for post in object_list%}
+		<div>
+                {% autoescape off %}
+                    {{ post.content|linebreaks|safe }}
+                {% endautoescape %}   
+		</div>
+		{% endfor %}
+    </div>
+</main>
+{% endblock %}

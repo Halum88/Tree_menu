@@ -1,10 +1,17 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from app.models import MenuItem
+from .models import Post, Category
 
 
-class MenuItemMPTTModelAdmin(MPTTModelAdmin):
-    mptt_level_indent = 20
+class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
 
 
-admin.site.register(MenuItem, MenuItemMPTTModelAdmin)
+admin.site.register(Post, PostAdmin)
+
+
+class CategoryAdmin(MPTTModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+
+
+admin.site.register(Category, CategoryAdmin)
