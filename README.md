@@ -18,7 +18,7 @@
 
 ### Настройки
 
-'''cd tree_menu
+```cd tree_menu
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
