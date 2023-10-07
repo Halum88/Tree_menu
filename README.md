@@ -1,6 +1,4 @@
-# Tree_menu
-
-# Тестовое задание UpTrader
+# Tree_menu Test task
 
 ### Задание
 
@@ -23,4 +21,4 @@
 '''cd tree_menu
 python manage.py makemigrations
 python manage.py migrate
-python manage.py runserver'''
+python manage.py runserver
