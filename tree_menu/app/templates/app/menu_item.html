@@ -1,0 +1,10 @@
+<li>
+    <a href="{{ menu_items.get_absolute_url }}" {% if menu_items.get_absolute_url == request.path %}class="active"{% endif %}>{{ menu_items.title }}</a>
+    {% if menu_items.children.all.count > 0 %}
+        <ul>
+            {% for child in menu_items.children.all %}
+                {% include 'app/menu_item.html' with menu_items=child %}
+            {% endfor %}
+        </ul>
+    {% endif %} 
+</li>

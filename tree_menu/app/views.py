@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView
+from .models import MenuItem
+from django.views import View
 
-def contacts_view(request):
-    return render(request, 'contacts.html')
+class PageDetailView(View):
+    template_name = 'app/page_detail.html'
 
-def about_view(request):
-    return render(request, 'about.html')
-
-def home_view(request):
-    return render(request, 'home.html')
+    def get(self, request, slug):
+        page = get_object_or_404(MenuItem, slug=slug)
+        return render(request, self.template_name, {'page': page})
